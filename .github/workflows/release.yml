@@ -10,7 +10,7 @@ jobs:
           node-version: 12
       - run: npm install
       - run: export VERSION=$(node -p "require('./package.json').version")
-      - run: echo $VERSION
+      - run: echo testing
  
 
       - uses: JS-DevTools/npm-publish@v1
