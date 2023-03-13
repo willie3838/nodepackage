@@ -1,5 +1,8 @@
 on: push
 
+env:
+  TEST: testing
+  
 jobs:
   publish:
     runs-on: ubuntu-latest
