@@ -1,5 +1,8 @@
 on: push
 
+env:
+  VARIABLE: node -p "require('./package.json').version"
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -9,9 +12,9 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: node -p "require('./package.json').version"
-
+ 
 
       - uses: JS-DevTools/npm-publish@v1
+        if: ${{ contains(VERSION, 'beta')}}
         with:
           token: ${{ secrets.NPM_TOKEN }}
