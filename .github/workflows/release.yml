@@ -2,7 +2,7 @@ on: push
 
 env:
   TEST: testing
-  
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: TEST=$(node -p "require('./package.json').version")
+      - run: env.TEST=$(node -p "require('./package.json').version")
       - run: echo $TEST
  
 
