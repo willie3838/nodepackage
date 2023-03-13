@@ -1,5 +1,7 @@
 on: push
 
+env:
+  VERSION: echo $(node -p "require('./package.json').version")
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -9,7 +11,7 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: echo $(node -p "require('./package.json').version")
+      - run: echo $VERSION
  
 
       - uses: JS-DevTools/npm-publish@v1
