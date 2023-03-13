@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: node -p "require('./package.json').version" >> "$VERSION"
+      - run: export VERSION=$(node -p "require('./package.json').version")
       - run: echo $VERSION
  
 
