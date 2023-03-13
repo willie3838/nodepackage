@@ -1,6 +1,6 @@
 on: push
 env:
-  VERSION: ${{node -p "require('./package.json').version"}}
+  SDK_VERSION: 1.6.0
 
 jobs:
   publish:
