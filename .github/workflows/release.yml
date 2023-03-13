@@ -12,9 +12,9 @@ jobs:
         with:
           node-version: 12
       - run: npm install
+      - run: echo "$VERSION"
  
 
       - uses: JS-DevTools/npm-publish@v1
-        if: ${{ contains($VERSION, 'beta')}}
         with:
           token: ${{ secrets.NPM_TOKEN }}
