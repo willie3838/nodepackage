@@ -15,6 +15,6 @@ jobs:
  
 
       - uses: JS-DevTools/npm-publish@v1
-        if: ${{ contains(VERSION, 'beta')}}
+        if: ${{ contains($VERSION, 'beta')}}
         with:
           token: ${{ secrets.NPM_TOKEN }}
