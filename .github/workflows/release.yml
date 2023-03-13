@@ -9,8 +9,8 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: export VERSION=$(node -p "require('./package.json').version")
-      - run: echo GETTING VERSION => $VERSION
+      - run: export PACKAGE_VERSION=$(node -p "require('./package.json').version")
+      - run: echo GETTING VERSION => $PACKAGE_VERSION
 
 
       - uses: JS-DevTools/npm-publish@v1
