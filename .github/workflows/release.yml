@@ -1,8 +1,5 @@
 on: push
 
-env:
-  VERSION: ${{node -p "require('./package.json').version"}}
-
 jobs:
   publish:
     runs-on: ubuntu-latest
