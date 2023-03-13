@@ -1,7 +1,7 @@
 on: push
 
 env:
-  VARIABLE: node -p "require('./package.json').version"
+  VERSION: node -p "require('./package.json').version"
 
 jobs:
   publish:
