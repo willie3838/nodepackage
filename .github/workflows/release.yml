@@ -9,6 +9,11 @@ jobs:
         with:
           node-version: 12
       - run: npm install
+      - run: export VERSION=$(node -p "require('./package.json').version")
+      - run: echo GETTING VERSION => $VERSION
+
+
       - uses: JS-DevTools/npm-publish@v1
+        if: ${{ contains(VERSION, 'beta') }}
         with:
           token: ${{ secrets.NPM_TOKEN }}
