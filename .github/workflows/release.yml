@@ -1,6 +1,6 @@
 on: push
 env:
-  SDK_VERSION: 1.7.0-beta
+  SDK_VERSION: "1.8.0"
 
 jobs:
   publish:
