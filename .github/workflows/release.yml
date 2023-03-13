@@ -1,4 +1,6 @@
 on: push
+env:
+  VERSION: "1.3.0"
 
 jobs:
   publish:
@@ -11,8 +13,13 @@ jobs:
       - run: npm install
  
       - uses: JS-DevTools/npm-publish@v1
-        env:
-          TESTING: "1.3.0"
-        if: ${{contains(env.TESTING, 'beta')}}
+        if: ${{contains(env.VERSION, 'beta')}}
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          tag: next
+      
+      - uses: JS-DevTools/npm-publish@v1
+        if: ${{contains(env.VERSION, 'beta')}}
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+        
